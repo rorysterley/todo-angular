@@ -1,0 +1,27 @@
+<div data-ng-controller="todoController">
+
+  <h2>Todos</h2>
+
+  <form data-ng-submit="create(todo)">
+    <legend>Add things to do:</legend>
+    <input type="text" data-ng-model="todo.todo" placeholder="Type and press enter">
+  </form>
+
+  <div>
+    <ul>
+      <li data-ng-repeat="todo in todos" data-ng-class="{even: !$even, odd: !$odd}">
+        <div data-ng-show="!todo.editing">
+          <input type="checkbox" data-ng-model="todo.done" data-ng-change="save(todo)">
+          {{ todo.todo }}
+          <button data-ng-click="editToggle(todo)">Edit</button>
+          <button data-ng-click="remove(todo)">Delete</button>
+        </div>
+        <div data-ng-show="todo.editing">
+          <form data-ng-submit="editToggle(todo)">
+          <input type="text" data-ng-model="todo.todo">
+        </div>
+      </li>
+    </ul>
+  </div>
+
+</div>
