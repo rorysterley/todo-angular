@@ -1,26 +1,34 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
   <meta charset="UTF-8">
 
   <title>Todo Angular App</title>
 
+  <link rel="stylesheet" href="/css/foundation-apps-1.1.0.min.css">
   <link rel="stylesheet" href="/css/main.css">
 </head>
 <body data-ng-app="todoApp">
+  <div class="vertical grid-frame">
 
-  <header>
-    <h1>Tech Demo: MEAN Stack</h1>
-    <a href="//www.linkedin.com/in/rorysterley">LinkedIn</a>
-    <a href="//github.com/rorysterley/todo-angular">GitHub</a>
-  </header>
+    <header class="grid-content title-bar">
+      <span class="title left">Tech Demo: MEAN Stack</span>
+      <span class="title right">
+        <a href="//www.linkedin.com/in/rorysterley">LinkedIn</a>
+        &nbsp|&nbsp
+        <a href="//github.com/rorysterley/todo-angular">GitHub</a>
+      </span>
+    </header>
 
-  <main data-ng-view></main>
+    <main data-ng-view></main>
 
-  <footer>
-    <h5>Credit: <a href="//www.linkedin.com/in/rorysterley">Rory Sterley</a></h5>
-  </footer>
+    <footer class="grid-content title-bar">
+      <span class="title center">
+        Developer: <a href="//www.linkedin.com/in/rorysterley">Rory Sterley</a>
+      </span>
+    </footer>
+
+  </div>
 
   <script type="text/javascript" src="bundle.js"></script>
 </body>
