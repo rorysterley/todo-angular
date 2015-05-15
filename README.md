@@ -53,7 +53,8 @@ $ node server
 
 > Run tests:
 ```
-$ grunt test
+$ grunt test:server
+$ grunt test:client
 ```
 
 <br>
