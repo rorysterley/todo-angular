@@ -2,3 +2,4 @@ node_modules
 DS_Store
 build
 db
+test/client/karma_test_bundle.js
