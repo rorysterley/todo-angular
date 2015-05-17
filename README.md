@@ -88,7 +88,7 @@ Add this Heroku app to your git remotes:
 ```
 $ git remote add heroku git@heroku.com:{heroku-app-name}.git
 ```
-###### Note: Replace {heroku-app-name} with your heroku app name e.g. git@heroku.com:myapp.git
+###### Note: Replace {heroku-app-name} with your heroku app name e.g. ``git@heroku.com:myapp.git``
 
 ### Deployment:
 
