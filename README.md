@@ -118,10 +118,9 @@ $ git commit -m 'Production v1'
 $ git push heroku HEAD:master
 ```
 
-0. Return to master branch and drop production code:
+0. Return to master branch:
 ```
 $ git checkout master
-$ git reset --heard HEAD
 ```
 
 <br>
