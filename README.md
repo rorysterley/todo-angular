@@ -92,33 +92,38 @@ $ git remote add heroku git@heroku.com:{heroku-app-name}.git
 
 ### Deployment:
 
-1: Checkout a production branch: (example follows)
+>1: Checkout a production branch: (example follows)
 ```
 $ git checkout -b production-v1
 ```
 
-2: Lock-down dependencies:
+<br>
+>2: Lock-down dependencies:
 ```
 $ npm shrinkwrap
 ```
 
-3: Build production code:
+<br>
+>3: Build production code:
 ```
 $ grunt production
 ```
 
-4: Commit production code: (example follows)
+<br>
+>4: Commit production code: (example follows)
 ```
 $ git add .
 $ git commit -m 'Production v1'
 ```
 
-5: Deploy:
+<br>
+>5: Deploy:
 ```
 $ git push heroku HEAD:master
 ```
 
-6: Return to master branch:
+<br>
+>6: Return to master branch:
 ```
 $ git checkout master
 ```
