@@ -46,8 +46,11 @@ module.exports = function(grunt) {
     },
 
     clean: {
-      build: {
+      dev: {
         src: ['build/']
+      },
+      pub: {
+        src: ['public/']
       }
     },
 
@@ -56,6 +59,10 @@ module.exports = function(grunt) {
         src: ['app/js/**/*.js'],
         dest: 'build/bundle.js'
       },
+      pub: {
+        src: ['app/js/**/*.js'],
+        dest: 'public/bundle.js'
+      },
       karmatest: {
         src: ['test/client/**/*_test.js'],
         dest: 'test/client/karma_test_bundle.js'
@@ -63,11 +70,19 @@ module.exports = function(grunt) {
     },
 
     copy: {
-      build: {
+      dev: {
         expand: true,
         cwd: 'app/',
         src: ['**/*.html', '**/*.png', '**/*.css'],
         dest: 'build/',
+        flatten: false,
+        filter: 'isFile'
+      },
+      pub: {
+        expand: true,
+        cwd: 'app/',
+        src: ['**/*.html', '**/*.png', '**/*.css'],
+        dest: 'public/',
         flatten: false,
         filter: 'isFile'
       }
@@ -81,7 +96,8 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('default', ['build']);
-  grunt.registerTask('build', ['clean', 'browserify:dev', 'copy']);
+  grunt.registerTask('build', ['clean:dev', 'browserify:dev', 'copy:dev']);
+  grunt.registerTask('production', ['clean:pub', 'browserify:pub', 'copy:pub']);
   grunt.registerTask('test:server', ['jshint', 'jscs', 'simplemocha:all']);
   grunt.registerTask('test:client', ['browserify:karmatest', 'karma:test']);
 };

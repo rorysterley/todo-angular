@@ -64,6 +64,67 @@ $ grunt build
 ```
 
 <br>
+> Build client side code for production:
+```
+$ grunt production
+```
+
+<br>
+## Deployment Process (Heroku)
+
+### Heroku Setup:
+Assuming you already have a [Heroku](//www.heroku.com) account:<br>
+
+Create a new heroku app. [(docs)](//devcenter.heroku.com/articles/getting-started-with-nodejs#introduction)<br>
+
+Add MongoLab to your app. Search "MongoLab" in the Resources tab of your app.<br>
+
+Add environmental variable. In the Settings tab click "Reveal Config Vars"
+then click "Edit".<br>
+Add a new variable with key: PRODUCTION and value: true<br>
+Click "save".<br>
+
+Add this Heroku app to your git remotes:
+```
+$ git remote add heroku git@heroku.com:{heroku-app-name}.git
+```
+###### Note: Replace {heroku-app-name} with your heroku app name e.g. git@heroku.com:myapp.git
+
+### Deployment:
+
+0. Checkout a production branch: (example follows)
+```
+$ git checkout -b production-v1
+```
+
+0. Lock-down dependencies:
+```
+$ npm shrinkwrap
+```
+
+0. Build production code:
+```
+$ grunt production
+```
+
+0. Commit production code: (example follows)
+```
+$ git add .
+$ git commit -m 'Production v1'
+```
+
+0. Deploy:
+```
+$ git push heroku HEAD:master
+```
+
+0. Return to master branch and drop production code:
+```
+$ git checkout master
+$ git reset --heard HEAD
+```
+
+<br>
 ## Contributors
 
 [Rory Sterley](//github.com/rorysterley)<br>
