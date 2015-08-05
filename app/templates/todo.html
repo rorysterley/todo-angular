@@ -1,7 +1,7 @@
 <div data-ng-controller="todoController" id="todo-view" class="vertical grid-block small-10 small-offset-1">
 
     <div class="grid-content">
-      <h3>Todos</h3>
+      <h3>To Do</h3>
       <form data-ng-submit="create(todo)">
         <input type="text" data-ng-model="todo.todo" placeholder="Type and press enter" autofocus>
       </form>
@@ -11,7 +11,7 @@
       <ul>
         <li data-ng-repeat="todo in todos" data-ng-class="{even: !$even, odd: !$odd}">
 
-          <div data-ng-show="!todo.editing">
+          <div data-ng-show="!todo.editing" id="line-item">
             <input type="checkbox" data-ng-model="todo.done" data-ng-change="save(todo)">
             <span ng-class="{strike: todo.done}">{{ todo.todo }}</span>
             <button data-ng-click="remove(todo)" class="todo-button">Delete</button>
