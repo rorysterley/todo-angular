@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="author" content="Rory Sterley">
+
+  <title>Todo Angular App</title>
+
+  <link rel="stylesheet" href="/css/foundation-apps-1.1.0.min.css">
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body data-ng-app="todoApp">
+  <div class="vertical grid-frame wrapper">
+
+    <header class="grid-content title-bar">
+      <span class="title left">Tech Demo: MEAN Stack</span>
+      <span class="title right">
+        <a href="//www.linkedin.com/in/rorysterley">LinkedIn</a>
+        &nbsp|&nbsp
+        <a href="//github.com/rorysterley/todo-angular">GitHub</a>
+      </span>
+    </header>
+
+    <main data-ng-view></main>
+
+    <footer class="grid-content title-bar">
+      <span class="title center">
+        Developer: <a href="//rorysterley.herokuapp.com/">Rory Sterley</a>
+      </span>
+    </footer>
+
+  </div>
+
+  <script type="text/javascript" src="bundle.js"></script>
+</body>
+</html>
