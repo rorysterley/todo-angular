@@ -119,7 +119,7 @@ $ git commit -m 'Production v1'
 <br>
 >5: Deploy:
 ```
-$ git push heroku HEAD:master
+$ git push heroku HEAD:master -f
 ```
 
 <br>
